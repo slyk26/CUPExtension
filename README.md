@@ -16,5 +16,6 @@ ___
 > - affiliated with anybody
 > - an official port
 > - planned to go on the chrome webstore
+> - track or store any information
 
 I just made this so I can keep using this extension. 
