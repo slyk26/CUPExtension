@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/allStyles.css">
+	<link rel="stylesheet" type="text/css" href="css/table.css">
+	<script type="text/javascript" src="master.b.js"></script>
+
+</head>
+
+<body>
+	<!-- select a pritner from the list-->
+	<div id="selector">
+		<center>
+			<img src="icons/icon48.png" width="24">
+			<h2>IPP / CUPS printing configuration </h2><small id="appVersion"></small>
+			<br>
+			<h3>Home user version</h3>
+		</center>
+		<div>
+			<form>
+				<div id="message">Select default printer
+					<select id="printerSelector" style="width: 420px;" hidden></select>
+					<p></p>
+					<span hidden id="manageLink" class="psuedo-link">Manage printers</span>
+					<a href="help.html" class="right-align">Help</a>
+				</div>
+				<div id="promoArea" style="align: center; width: 100%; text-align: center">
+
+					<div id="wifiPromo">
+						This is a customized version of the extension, maintained by the community to keep support alive.
+					</div>
+
+
+				</div>
+  		<div hidden>
+					<center>
+						<input hidden type="button" class="button" value="Please donate" />
+					</center>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- End pritner selector -->
+
+	<!-- Delete confirmation pop -->
+	<div id="popup1" class="overlay">
+		<div class="popup">
+			<center>
+				<h2>Confirm printer removal</h2>
+			</center>
+			<br>
+			<div class="cont">
+				<center>
+					<input type="button" class="button" value="Remove" id="deleteIt">
+					<input type="button" class="button" value="Cancel" id="cancelIt">
+				</center>
+			</div>
+		</div>
+	</div>
+	<!-- End popup overlay -->
+
+	<!-- Print test page confirmation pop -->
+	<div id="testPageConfirm" class="overlay">
+		<div class="popup">
+			<center>
+				<h2>Did the test page print correctly?</h2>
+			</center>
+			<br>
+			<div class="cont">
+				<center>
+					<input type="button" class="button" value="Yes" id="printTestPass">
+					<input type="button" class="button" value="No" id="printTestFail">
+				</center>
+			</div>
+		</div>
+	</div>
+	<!-- End popup overlay -->
+
+	<!-- Print test page confirmation pop -->
+	<div id="testPageThanks" class="overlay">
+		<div class="popup">
+			<center>
+				<h2>Thank you</h2>
+			</center>
+			<br>
+			<center>Thanks for providing your feedback. It helps to improve the compatibility of the product.</center>
+			<div class="cont">
+				<center>
+					<input type="button" class="button" value="exit" id="exit">
+				</center>
+			</div>
+		</div>
+	</div>
+	<!-- End popup overlay -->
+
+	<!-- Begin main area -->
+	<div id="manage" class="hide-me">
+		<a id="selectorLink" class="psuedo-link">&lt;&nbsp; Select printer</a>
+		<br>
+		<center>
+			<img src="icons/icon48.png" width="24">
+			<h2>Printer management</h2>
+		</center>
+		<div>
+			<div class="section">
+				<div>
+					<div class="label">Available printers</div>
+				</div>
+				<table id="printerTable" class="PrinterTable" width="100%" hidden>
+					<tr>
+						<td style="width: 30%">Printer name</td>
+						<td style="width: 60%">IPP address</td>
+						<td>Test</td>
+						<td>Remove</td>
+					</tr>
+				</table>
+				<center id="noPrinters" style="display: none">No printers defined</center>
+			</div>
+			<p></p>
+			<div class="section">
+				<form>
+					<div class="label">Add / edit printer</div>
+					Name:
+					<br>
+					<input type="text" id="fName" style="width: 200px;" size=55> Printer type:
+					<select id="printerType">
+						<option value="auto">Auto detect</option>
+						<option value="pdf">PDF</option>
+						<option value="pwg">PWG</option>
+						<option value="ps">Postscript (L2)</option>
+						<option value="urf">Unirast</option>
+						<option value="oct">PDF as octet</option>
+					</select>
+					<br> IPP Address:
+					<br>
+					<input type="text" id="serverAddr" style="width: 400px;" size=55>
+					<input type="button" class="button" id="addIt" value="Save">
+					<a href="help.html">Help! - what is this?</a>
+
+					<center id="entryError" style="display: none"></center>
+				</form>
+
+			</div>
+			<p></p>
+			<div class="section">
+				<div>
+					<div class="label">Printer information</div>
+					<br>
+					<div id="printerInfo">Click <img src="icons/info.png"> to test a printer.</div>
+				</div>
+				<div>
+					<input type="button" class="button" id="clear" value="Clear test results">
+					<input type="button" class="button" style="visibility: hidden;" id="printTest" value="Print test page">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

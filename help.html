@@ -1,0 +1,142 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/allStyles.css">
+	<script type="text/javascript" src="help.js"></script>
+</head>
+
+<body>
+	<br>
+	<div>
+		<center>
+			<img src="icons/icon48.png" width="24">
+			<h2>IPP / CUPS printing - Help</h2>
+		</center>
+	</div>
+	<p>&nbsp;</p>
+	<h3>What is the IPP / CUPS printer extension?</h3>
+	<p>
+	</p>
+	<p>
+		<b style="margin: 0px; padding: 0px;">This extension allows you to print directly to a <a href="http://www.cups.org" target="_blank">CUPS</a> print server or IPP compatible printer. </b>
+	</p>
+	<p>IPP stands for Internet Printing Protocol a protocol used by some printers to accpet print jobs.</p>
+
+	<p>When using IPP, Google Cloud print <b>is not</b> required, your documents stay within your local network - unless you set it up specifically to print across the Internet.</p>
+	<p>&nbsp;</p>
+
+	<div style="border: 1px solid darkgreen;">
+		<h3>About this version</h3>
+
+		<p>This is a customized version of the extension, maintained by the community to keep support alive.
+			<br>All analytics and tracking have been removed - no data is collected, reported, shared, or stored.
+		</p>
+	</div>
+	<p>&nbsp;</p>
+
+	<p>&nbsp;</p>
+	<h3>How do I get it to work?</h3>
+
+	<p>1) You need a CUPS (Common Unix Printing System) service configured and running on your local network <b>or</b> a printer that natively supports the IPP protocol.</p>
+	<p>2) You need the full IPP (Internet Printing Protocol) address of the printer. This application (unlike e.g. Airprint) does not automatically discover printers on the network. This is due to a current limitation with public Chrome extensions not being able to scan the network for printers.</p>
+	<p>The address needs to include the http:// or https:// prefix.</p>
+	<p>&nbsp;</p>
+	<h3>How do I find the IPP address of the printer?</h3>
+
+	<p>Using CUPS: Go to the CUPS admin page on your CUPS server (typically http://your_address:631/) Select 'Printers', then the link to the printer you want to use. Your browser address bar should now contain the IPP address, which should look something like this: http://192.168.1.101:631/printers/Dell_C1765nfw_Color_MFP_</p>
+	<p>Paste this address into the server address area, and give the printer a friendly name (e.g. Office 103 printer).</p>
+	<center>
+		<img src="images/ipp_addr.png" width="400" border="1">
+	</center>
+	<p></p>
+	<p>For printing direct to a printer that supports IPP (Internet Printing Protocol): Consult your printers documentation or configuration menu to find the full IPP address.</p>
+	<p>Please note if you are connecting direct to a printer (not via CUPS) the IPP printer <b>MUST SUPPORT PDF, PWG, Postscript or Unirast document types</b>. Check the specifications carefully for this support.</p>
+	<p>&nbsp;</p>
+
+	<h3>How do I know if my printer is compatible?</h3>
+	<p>Either consult the printer specs looking for the PDF/PWG/URF/Postscript compatibility or test the printer using the test function in the <a href="master.html">management page.</a></p>
+	<p>After entering the IPP address and name for the printer, click save.</p>
+	<p>Clicking the info button <img src="icons/info.png"> will query the printer for it's capability.</p>
+	<p>If the printer is compatible then it will show <b>PASS</b>.</p>
+	<p>If the printer is not reporting compatibility it will show <b>FAIL</b> You can attempt to print regardless of the test result.</p>
+
+	<p>&nbsp;</p>
+	<h3>How do I print?</h3>
+
+	<p>Just select the IPP printer from the printer options dialogue when you &lt;ctrl-p&gt; or select print from the Chrome menu.</p>
+	<p>&nbsp;</p>
+
+	<h3>What happens once the print job is sent?</h3>
+
+	<p>Chrome will show a notification in the bottom-right corner which contains a success or failure code.</p>
+	<p>If your print job is large (e.g. a few MB) then it will take time to notify.</p>
+	<p>&nbsp;</p>
+	<a href="#errors">
+		<h3>Common error codes</h3>
+	</a>
+
+	<p><b>IPP Server status code: client-error-not-found</b>
+
+		<br>The address of the print server is incorrect, check the address and re-enter.</p>
+	<p><b>Cannot contact printer - check URL & connectivity / Type error: Failed to fetch</b>
+
+		<br>The system cannot resolve the name of the printer. Please check the name or enter the IP address instead.</p>
+
+	<p>&nbsp;</p>
+	<h3>Permissions and security</h3>
+
+	<p>The extension requests access for communications to http://*/* and https://*/* as it needs to send print jobs to the printer or print server.
+		<br>The Chrome permission request looks like this: <b>"Read and modify all your data on all websites you visit".</b> The permission is explained
+		<a href="https://developer.chrome.com/extensions/permission_warnings">here about half way down the page.</a>
+		<br>The extension <b>does not require access to passwords</b> or other sensitive information.
+		<br>The extension <b>does not store any print jobs or documents.</b>
+	</p>
+
+	<p>&nbsp;</p>
+	<h3>It doesn't work !</h3>
+
+	<p>Drop us a note in the support tab or send an email (email address on the web store)</p>
+	<p>&nbsp;</p>
+	<h3>Version history</h3>
+
+	<p>v0.1.1 - Initial release.</p>
+	<p>v0.1.2 - Minor wording changes to help</p>
+	<p>v0.1.3 - Help on error print attempts, help page shown at installation</p>
+	<p>v0.1.4 - Fixed bugs relating to correct handling of copies and paper size. Photo size may still not work.</p>
+	<p>v0.1.5 - Introduced multiple printer support, [very] experimental policy defined mode for device Administrators, bugfixes on 6x4/4x6 printing.</p>
+	<p>v0.1.6 - Spelling and detail corrections to the device administrator help section.</p>
+	<p>v0.1.7 - Fixed bug relating to printer address not being persisted.</p>
+	<p>v0.1.8 - IPP request version downgraded to 1.1 from 2.0 for better compatibility. Introduced printer test compatibility function.</p>
+	<p>v0.1.9 - Fixed some cosmetic CSS issues, added security/permissions section to help section. Added wait/hourglass mouse pointer during printer info query. Added confirmation step to printer removal.</p>
+	<p>v0.1.10 - Fixed cosmetic CSS issue with address truncation in table. Added accepting jobs flag. Changed some text strings.</p>
+	<p>v0.1.11 - Implemented fix for Brother printers (application/octet-stream) &amp; introduced landscape/portrait print option.</p>
+	<p>v0.1.12 - Applied Brother printing bugfix patch submitted by Lutz Hohle - many thanks.</p>
+	<p>v0.1.13 - Introduced printer compatibility analytics (see analytics consent above)</p>
+	<p>v0.1.14 - Improved analytics and extension update detection.</p>
+	<p>v0.1.15 - Various bugfixes.</p>
+	<p>v0.1.16 - Support for PWG printers, code refactor, auto clear notificaions.</p>
+	<p>v0.1.17 - Added link to WiFi printer driver for Chrome</p>
+	<p>v0.1.18 - Added 2 sided / duplex printing option - only for auto duplex printers.</p>
+	<p>v0.1.19 - Bugfix.</p>
+	<p>v0.1.20 - Rolled back 2 sided printing support due to reports of printer incompatibility</p>
+	<p>v0.1.21 - Management page refactor.</p>
+	<p>v0.1.22 - Introduced Amazon printer suggestions for US users</p>
+	<p>v0.1.23 - Improved analytics</p>
+	<p>v0.1.24 - Removed Amazon printer suggestions for US users</p>
+	<p>v0.1.25 - Page counter and notification modification</p>
+	<p>v0.1.26 - Split out GAdmin capability into new extension.</p>
+	<p>v0.1.27 - Added Postscript printer support (consider it experimental at this stage).</p>
+	<p>v0.1.28 - Analytics bigfix</p>
+	<p>v0.1.28 - Added Unirast support</p>
+	<p>v0.1.29 - Updates to print engine</p>
+	<p>v0.1.30 - Introduced config export for G-Admin extension</p>
+	<p>v0.1.31 - ChromeOS update broke print-preview, fixed.</p>
+	<p>v0.1.32 - Introduced print spooling, retry and multi-page manual job-send</p>
+	<p>v0.1.33 - Bugfixes and analytics changes</p>
+	<p>v0.1.34 - Change to fix Chrome hang on missing printer. Better Xerox support - requires new permissions</p>
+
+	<p>&nbsp;</p>
+
+</body>
+
+</html>

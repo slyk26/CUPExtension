@@ -1,0 +1,132 @@
+ * {
+     margin: 2px;
+     padding: 2px;
+     font-family: Roboto, Arial;
+ }
+ 
+ body {
+     background-color: #ffffff;
+     width: 450px;
+ }
+ 
+ .hide-me {
+     display: none;
+ }
+ 
+ div#saved {
+     background: #ffff7f;
+     float: right;
+ }
+ 
+.psuedo-link {
+     cursor:pointer;
+     color:blue;
+     text-decoration:underline;
+}
+ 
+ .button:hover {
+     border-color: #c45d04;
+     background-color: #fca355;
+     color: #ffffff;
+ }
+ 
+ .button {
+     border-color: #c45d04;
+     background-color: #e76e04;
+     color: #ffffff;
+     margin: 2px;
+ }
+ 
+ .right-align {
+     float: right;
+ }
+ 
+ .label {
+     margin: 0px;
+     padding: 0px;
+     font-weight: bold;
+ }
+ 
+ .section {
+     background-color: #dddddd;
+     margin: 2px;
+     font-family: Roboto, arial, sans-serif;
+     color: #555;
+ }
+ 
+ .allForm {
+     width: 400;
+ }
+ 
+ h1,
+ h2,
+ h3 {
+     font-family: Roboto, arial, sans-serif;
+     font-weight: 300;
+     line-height: 1.0;
+     color: #333;
+     display: inline;
+ }
+ 
+ img,
+ h2 {
+     display: inline-block;
+     vertical-align: middle;
+ }
+ 
+ h3 {
+     font-weight: bold;
+ }
+ 
+ small {
+     background-color: #eeeeee;
+ }
+ 
+ ul,
+ li {
+     margin: 10px;
+ }
+ 
+ p {
+     font-family: Roboto, arial, sans-serif;
+     font-weight: 300;
+     line-height: 1.0;
+     color: #555;
+     padding: 2px;
+ }
+ 
+ .overlay {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background: rgba(255, 255, 255, 0.7);
+     display: none;
+     opacity: 1;
+ }
+ 
+ .popup {
+     align-content: center;
+     vertical-align: middle;
+     margin: 70px auto;
+     padding: 20px;
+     background: #fff;
+     border-radius: 5px;
+     width: 40%;
+     border-style: solid;
+     border-color: darkgrey;
+     position: relative;
+ }
+ 
+ .popup h2 {
+     margin-top: 0;
+     color: #333;
+     font-family: Tahoma, Arial, sans-serif;
+ }
+ 
+ .popup .cont {
+     align-content: center;
+     max-height: 30%;
+     overflow: auto;
+ }

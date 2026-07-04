@@ -1,0 +1,14 @@
+# Build artifacts
+*.zip
+*.crx
+*.pem
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+
+# Junie agent internal storage
+.junie/
